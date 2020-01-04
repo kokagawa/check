@@ -1,0 +1,2 @@
+class Timedatum < ApplicationRecord
+end
