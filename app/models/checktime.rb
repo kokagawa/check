@@ -1,0 +1,2 @@
+class Checktime < ApplicationRecord
+end
