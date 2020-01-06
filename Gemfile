@@ -74,3 +74,4 @@ group :development, :test do
 end
 
 gem 'timers'
+gem 'haml-rails'
