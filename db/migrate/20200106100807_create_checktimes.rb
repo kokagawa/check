@@ -1,7 +1,8 @@
 class CreateChecktimes < ActiveRecord::Migration[5.2]
   def change
-    create_table :checktime do |t|
-
+    create_table :checktimes do |t|
+      t.integer :time, null: false
+      t.text :text, null: false
       t.timestamps
     end
   end

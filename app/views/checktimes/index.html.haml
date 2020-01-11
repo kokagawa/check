@@ -1,11 +1,34 @@
-<html>
-  <head>
-  <!-- ここから -->
-    <meta charset="UTF-8" >
-    <title></title>
-  <!-- ここまでにhead要素を書きます -->
-  </head>
-  <body>
-   HELLO
-  </body>
-</html>
+.base
+  .title
+    checker
+  .description
+    .use
+      使い方
+    このアプリケーションは一日のスケジュールを管理するアプリケーションです。
+    %br
+    設定した予定が始まるまで後何時間かかるかが分かります。また始まる時間を知らせてくれます。
+    %br
+    １、予定の項目と日時の項目を入力
+    %br
+    ↓
+    %br
+    ２、スタートボタンを押すとシステムが始動します。
+           
+    
+  .form_box
+    = form_for @checktime, url: alarms_path, method: :post do |f|
+      .text_box
+        予定
+        = f.text_field :text
+      .submit_box
+        = f.number_field :month, :value => 1
+        月
+        = f.number_field :day
+        日
+        = f.number_field :hour
+        時
+        = f.number_field :minute
+        分
+        = f.submit "スタート", class: 'btn' 
+  .verification      
+    予定を確認する    

@@ -75,3 +75,4 @@ end
 
 gem 'timers'
 gem 'haml-rails'
+gem "jquery-rails"
