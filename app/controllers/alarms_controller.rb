@@ -5,12 +5,17 @@ class AlarmsController < ApplicationController
   end
 
   def show
-    @checktime = Checktime.find(params[:id])
+    @checktime = Checktime.find_by(params[:id]) 
+    if @checktime.present?
+    else
+      redirect_to root_path 
+    end  
     @checktimes = Checktime.all
     gon.checktime = @checktime
     gon.checktimes = @checktimes
-    
   end
+   
+  
 
   def create
     @checktime = Checktime.new(checktime_params)
@@ -22,10 +27,10 @@ class AlarmsController < ApplicationController
         format.html { redirect_to root_path }
         format.json
       end
-    else
+      else
       redirect_to root_path 
       end
-    end 
+  end
     
 
   private
