@@ -76,3 +76,5 @@ end
 gem 'timers'
 gem 'haml-rails'
 gem "jquery-rails"
+gem 'jquery-turbolinks'
+gem 'gon'

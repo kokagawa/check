@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_09_074728) do
+ActiveRecord::Schema.define(version: 2020_01_22_080347) do
 
   create_table "checktimes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2020_01_09_074728) do
     t.integer "day", null: false
     t.integer "hour", null: false
     t.integer "minute", null: false
+    t.integer "total_sec"
+    t.text "memo"
   end
 
 end

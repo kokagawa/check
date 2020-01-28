@@ -1,40 +1,44 @@
-.bar {
-  height: 20px;
-  width: 300px;
-  .move_bar {
-    background: darkcyan;
-    height: 20px;
-    width: 1px;
-    float: left;
-}
-}
 
 .main {
   height: 100%;
-  width: 100%;
+  width: 100vw;
   color: white;
   font-size: 40px;
   background: darkgreen;
-  position: fixed;
-  padding-left: 50px;
+  padding-bottom: 20px;
   .contents {
-    height: 170px;
+    height: 350px;
     width: 1350px;
     border: solid 1px white;
     background: #666666;
+    margin-left: 40px;
     margin-bottom: 30px;
-    .contents_left {
+    .contents_bar {
       height: 150px;
-      width: 630px;
+      width: 1350px;
       color: white;
-      position: fixed;
+      float: left;
       .al_bar {
         height: 50px;
-        width: 560px;
+        width: 1250px;
         border: solid 1px #777777;
         margin-top: 50px;
         margin-left: 30px;
-      }
+        .move_bar {
+          background: blue;
+          height: 50px;
+          width: 1px;
+          float: left;
+          }
+        .before_bar {
+          background: blue;
+          height: 50px;
+          width: 0px;
+          float: left;
+        }  
+        }
+        
+      
       .start_point {
         height: 20px;
         width: 100px;
@@ -44,47 +48,38 @@
       } 
       .space {
         height: 20px;
-        width: 400px;
+        width: 1000px;
         float: left;
       }
       .over_point {
         height: 20px;
         width: 80px;
         font-size: 15px; 
-        padding-left: 18px;
+        padding-left: 115px;
         float: left;
         text-align: end;
       }
     }
-    .contents_right {
-      color: white;
-      height: 150px;
-      width: 700px;
-      float: right;
-      font-size: 30px;
-      padding-top: 30px;
-      padding-left: 30px;
-      position: relative;
-      
+    .contents_w {
+      height: 200px;
+      width: 1350px;
+      border: solid 1px white;
+      background: #666666;
+      clear:  both; 
+      .contents_right {
+        height: 200px;
+        width: 675px;
+        font-size: 20px;
+        .memo_box {
+          height: 160px;
+          width: 450px;
+          border: solid 2px #990000;
+          margin: auto;
+          margin-left: 50px;
+          color: black;
+          background: white;
+        }
+      }  
     }
-    .remove_btn {
-      display       : inline-block;
-      border-radius : 5%;          /* 角丸       */
-      font-size     : 15pt;        /* 文字サイズ */
-      text-align    : center;      /* 文字位置   */
-      cursor        : pointer;     /* カーソル   */
-      padding       : 12px 12px;   /* 余白       */
-      background    : #990000;     /* 背景色     */
-      color         : #ffffff;     /* 文字色     */
-      line-height   : 1em;         /* 1行の高さ  */
-      transition    : .3s;         /* なめらか変化 */
-      border        : 2px solid #990000;    /* 枠の指定 */
-      position: absolute;
-      position: absolute;
-      right:  30px;  
-      top: 60px;      
-    }
-  }
-  
- 
+  }  
 }

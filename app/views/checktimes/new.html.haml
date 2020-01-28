@@ -1,0 +1,40 @@
+
+.base
+  .title
+    checker   
+  .form_box
+    = form_for @checktime, url: alarms_path, method: :post do |f|
+      .text_box
+        予定
+        = f.text_field :text, maxlength: 14
+      .memo_box
+        MEMO
+        = f.text_area :memo
+      .date
+        日時  
+      .submit_box
+        = f.number_field :month, min: 1, max: 12
+        月
+        = f.number_field :day, min: 1, max: 31
+        日
+        = f.number_field :hour, min: 0, max: 23
+        時
+        = f.number_field :minute, min: 0, max: 59
+        分
+        = f.submit "スタート", class: 'btn'   
+  .plans_title  
+    現在の予定  #{Checktime.count}件        
+  .plans_base
+    - @checktimes.each_with_index do |n, index| 
+      .plans{"data-id" => "#{n.id}"}
+        .plans_name{:id => "plans_#{index}"}
+          = link_to "alarms/#{n.id}" do
+            #{n.text}
+        .plans_time
+          #{n.month}月#{n.day}日&nbsp;#{n.hour}:#{n.minute}
+          = link_to "checktimes/#{n.id}", method: :delete, data:{confirm: "削除しますか？"} do
+            .remove_btn
+              この予定を削除
+
+
+                      

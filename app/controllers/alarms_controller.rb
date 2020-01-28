@@ -1,16 +1,29 @@
 class AlarmsController < ApplicationController
   def index
-   
-  end 
+   @checktime = Checktime.all
+   gon.checktime = @checktime
+  end
+
+  def show
+    @checktime = Checktime.find(params[:id])
+    gon.checktime = @checktime
+  end
 
   def create
     @checktime = Checktime.new(checktime_params)
-    if @checktime.save
-      redirect_to alarms_path
+     time = Time.now
+     plan = time.change(year:2020, month:@checktime.month, day:@checktime.day, hour:@checktime.hour, min:@checktime.minute, sec: 0 ) 
+     @checktime.total_sec = plan - time 
+     if @checktime.save
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json
+      end
     else
-      render '/'
-    end
-  end 
+      redirect_to root_path 
+      end
+    end 
+    
 
   private
 
