@@ -6,7 +6,10 @@ class AlarmsController < ApplicationController
 
   def show
     @checktime = Checktime.find(params[:id])
+    @checktimes = Checktime.all
     gon.checktime = @checktime
+    gon.checktimes = @checktimes
+    
   end
 
   def create

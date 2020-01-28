@@ -38,7 +38,7 @@ $(document).on('turbolinks:load', function(){
       $('#checktime_hour').val('');
       $('.plans_base').animate({ scrollTop: $('.plans_base')[0].scrollHeight });
       alert('予定を追加しました')
-      $('.plans_title').text(`現在の予定 ${gon.checktime.length}件`);
+      $('.plans_title').text(`現在の予定 ${gon.checktimes.length}件`);
 
     })
     
@@ -85,7 +85,7 @@ $(document).on('turbolinks:load', function(){
 
    
    var i = 0;
-   $.each(gon.checktime, function(index, value) {
+   $.each(gon.checktimes, function(index, value) {
         var a_date = new Date(); 
         var a_num = a_date.getTime();
         var user_date = new Date(2020, value.month - 1,  value.day,  value.hour,  value.minute);
