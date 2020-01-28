@@ -3,7 +3,7 @@ class ChecktimesController < ApplicationController
     @checktime = Checktime.new 
     @checktimes = Checktime.all
     gon.checktimes = @checktimes
-    gon.checktime = Checktime.first
+    gon.checktime = @checktimes
   end  
   
   def destroy
