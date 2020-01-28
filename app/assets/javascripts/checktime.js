@@ -1,5 +1,3 @@
-
-
 $(document).on('turbolinks:load', function(){
   function buildHTML(plan) {
      var html = `<div class='plans' data-id="${plan.id}">             
