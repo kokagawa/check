@@ -5,11 +5,7 @@ class AlarmsController < ApplicationController
   end
 
   def show
-    @checktime = Checktime.find_by(params[:id]) 
-    if @checktime.present?
-    else
-      redirect_to root_path 
-    end  
+    @checktime = Checktime.find(params[:id]) 
     @checktimes = Checktime.all
     gon.checktime = @checktime
     gon.checktimes = @checktimes
