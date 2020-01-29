@@ -32,6 +32,6 @@ class AlarmsController < ApplicationController
   private
 
   def checktime_params
-      params.require(:checktime).permit(:text, :month, :day, :hour, :minute)
+      params.require(:checktime).permit(:plan, :month, :day, :hour, :minute, :memo)
   end
 end

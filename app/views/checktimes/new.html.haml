@@ -6,7 +6,7 @@
     = form_for @checktime, url: alarms_path, method: :post do |f|
       .text_box
         予定
-        = f.text_field :text, maxlength: 14
+        = f.text_field :plan, maxlength: 14
       .memo_box
         MEMO
         = f.text_area :memo
@@ -29,7 +29,7 @@
       .plans{"data-id" => "#{n.id}"}
         .plans_name{:id => "plans_#{index}"}
           = link_to "alarms/#{n.id}" do
-            #{n.text}
+            #{n.plan}
         .plans_time
           #{n.month}月#{n.day}日&nbsp;#{n.hour}:#{n.minute}
           = link_to "checktimes/#{n.id}", method: :delete, data:{confirm: "削除しますか？"} do

@@ -5,7 +5,7 @@
     .add_btn
       予定を追加  
 .main 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{@checktime.text}&nbsp;&nbsp;&nbsp;&nbsp;#{@checktime.month}月#{@checktime.day}日#{@checktime.hour}時#{@checktime.minute}分
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{@checktime.plan}&nbsp;&nbsp;&nbsp;&nbsp;#{@checktime.month}月#{@checktime.day}日#{@checktime.hour}時#{@checktime.minute}分
   - necessary_day = @checktime.total_sec / (24*60*60)
   - necessary_hour = (((@checktime.total_sec / (24*60*60).to_f) - (@checktime.total_sec / (24*60*60))) * 24).floor
   - necessary_min = (((((@checktime.total_sec / (24*60*60).to_f) - (@checktime.total_sec / (24*60*60))) * 24) -  (((@checktime.total_sec / (24*60*60).to_f) - (@checktime.total_sec / (24*60*60))) * 24).floor) * 60).floor

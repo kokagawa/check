@@ -1,14 +1,14 @@
 $(document).on('turbolinks:load', function(){
-  function buildHTML(plan) {
-     var html = `<div class='plans' data-id="${plan.id}">             
+  function buildHTML(user_time) {
+     var html = `<div class='plans' data-id="${user_time.id}">             
                      <div class='plans_name'>
-                       <a href="/alarms/${plan.id}">
-                       ${plan.text}
+                       <a href="/alarms/${user_time.id}">
+                       ${user_time.plan}
                        </a>
                      </div>                
                    <div class='plans_time'>
-                    ${plan.month}月${plan.day}日&nbsp;${plan.hour}:${plan.minute}
-                    <a data-confirm="削除しますか？"  data-method"delete" href="checktimes/${plan.id}"}>
+                    ${user_time.month}月${user_time.day}日&nbsp;${user_time.hour}:${user_time.minute}
+                    <a data-confirm="削除しますか？"  data-method"delete" href="checktimes/${user_time.id}"}>
                       <div class='remove_btn'>この予定を削除</div>
                     </a>
                    </div>
@@ -18,12 +18,12 @@ $(document).on('turbolinks:load', function(){
   
   $('#new_checktime').on('submit', function(e){
     e.preventDefault();
-    var plans = new FormData(this);
+    var u_date = new FormData(this);
     var url = "/alarms";
     $.ajax({  
       url: url,
       type: 'POST',
-      data: plans,
+      data: u_date,
       dataType: 'json',
       processData: false,
       contentType: false
@@ -38,8 +38,9 @@ $(document).on('turbolinks:load', function(){
       $('#checktime_hour').val('');
       $('.plans_base').animate({ scrollTop: $('.plans_base')[0].scrollHeight });
       alert('予定を追加しました')
-      $('.plans_title').text(`現在の予定 ${gon.checktimes.length}件`);
-
+      $('.plans_title').text(`現在の予定 ${gon.checktimes.length + 1}件`);
+      console.log(gon.checktimes.length) 
+      
     })
     
     .fail(function(data){
@@ -47,6 +48,7 @@ $(document).on('turbolinks:load', function(){
     })
     .always(function(data){
       $('.btn').prop('disabled', false);//ここで解除している
+      
     })
   })
 
