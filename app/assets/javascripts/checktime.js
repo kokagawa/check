@@ -1,3 +1,13 @@
+$(document).on('turbolinks:load', function(){ 
+  if (window.name != "xyt"){
+      location.reload();
+      window.name = "xyt";
+      }
+      else{
+       window.name = "xyz";  
+      }
+      });
+      
 $(document).on('turbolinks:load', function(){
   function buildHTML(user_time) {
      var html = `<div class='plans' data-id="${user_time.id}">             

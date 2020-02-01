@@ -1,14 +1,4 @@
 $(document).on('turbolinks:load', function(){ 
-   if (window.name != "xyt"){
-       location.reload();
-       window.name = "xyt";
-       }
-       else{
-        window.name = "xyz";  
-       }
-       });
-
-$(document).on('turbolinks:load', function(){ 
   var nowDate = new Date();
   var dnumNow = nowDate.getTime();
   var user_start = new Date(gon.checktime.created_at);
@@ -26,7 +16,7 @@ $(document).on('turbolinks:load', function(){
   
   $(function() {
     if (bar_width > 1250){
-       $('.before_bar').css('width', `${display_width}px`);
+       $('.before_bar').css('width', `${display_width + 10}px`);
     }
     else{
        $('.before_bar').css('width', `${bar_width}px`);
@@ -58,6 +48,8 @@ $(document).on('turbolinks:load', function(){
         timer1  = setInterval(move, (gon.checktime.total_sec / 1250) * 1000);
         }
     });
+
+
  
     
   

@@ -30,19 +30,51 @@
     top: 50px;      
     
   } 
-  .description {
-    height: 300px;
+  .msg {
+    height: 45px;
+    width: 1000px;
+    margin: auto;
+  }
+  .description  {
+    height: 500px;
     width: 1000px;
     text-align: center;
     color:white;
     font-size: 20px;
     margin: auto;
-    .use {
-      height: 50px;
-      width: 100%;
-      font-size: 30px;
-    } 
+    border: solid 3px white;
+    border-top: 0;
   }
+  .use_space {
+    height: 70px;
+    width: 1000px;
+    text-align: center;
+    color:white;
+    font-size: 20px;
+    margin: auto;
+    border: solid 3px white;
+    border-bottom: 0;
+    .use {
+      display       : inline-block;
+      border-radius : 5%;          /* 角丸       */
+      font-size     : 18pt;        /* 文字サイズ */
+      text-align    : center;      /* 文字位置   */
+      padding       : 12px 12px;   /* 余白       */
+      background    : #000066;     /* 背景色     */
+      color         : #ffffff;     /* 文字色     */
+      line-height   : 1em;         /* 1行の高さ  */
+      transition    : .3s;         /* なめらか変化 */
+      border        : 2px solid #000066;    /* 枠の指定 */
+      margin-top: 10px;
+    }
+  }
+  
+    .button:hover {
+      box-shadow    : none;        /* カーソル時の影消去 */
+      color         : #000066;     /* 背景色     */
+      background    : #ffffff;     /* 文字色     */
+    }
+  
   .form_box {
     height: 330px;
     width: 1000px;

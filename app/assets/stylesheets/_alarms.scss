@@ -19,7 +19,7 @@
       float: left;
       .al_bar {
         height: 50px;
-        width: 1250px;
+        width: 1260px;
         border: solid 1px #777777;
         margin-top: 50px;
         margin-left: 30px;
@@ -65,19 +65,28 @@
       border: solid 1px white;
       background: #666666;
       clear:  both; 
-      .contents_right {
+      .contents_left {
         height: 200px;
         width: 675px;
         font-size: 20px;
+        float: left;
+        background: crimson;
         .memo_box {
           height: 160px;
           width: 450px;
           border: solid 2px #990000;
-          margin: auto;
-          margin-left: 50px;
+          margin: 0 20px 10px 20px;
           color: black;
-          background: white;
+          background: white; 
+          padding-left: 10px;
+          padding-right: 10px;
         }
+      }  
+      #contents_right {
+        height: 200px;
+        width: 675px;
+        background: chocolate;
+        float: right;
       }  
     }
   }  

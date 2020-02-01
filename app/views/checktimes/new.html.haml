@@ -1,4 +1,3 @@
-
 .base
   .title
     checker   
@@ -35,6 +34,6 @@
           = link_to "checktimes/#{n.id}", method: :delete, data:{confirm: "削除しますか？"} do
             .remove_btn
               この予定を削除
-
+= javascript_include_tag 'checktime.js'
 
                       

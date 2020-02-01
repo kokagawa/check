@@ -1,4 +1,7 @@
 class ChecktimesController < ApplicationController
+  def index
+  end  
+  
   def new
     @checktime = Checktime.new 
     @checktimes = Checktime.all
@@ -18,6 +21,7 @@ class ChecktimesController < ApplicationController
     end
   end 
 
+  
   
 end  
    

@@ -19,10 +19,15 @@
       .over_point
         timeover 
     .contents_w
-      .contents_right
+      .contents_left
         &nbsp;&nbsp;&nbsp;&nbsp;MEMO
         .memo_box 
-          #{@checktime.memo}  
+          #{@checktime.memo} 
+          uuuuuuuuuu
+      #contents_right   
+= javascript_include_tag 'alarm.js'
+= javascript_include_tag 'countdown.js'
+
              
 
    
