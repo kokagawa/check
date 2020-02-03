@@ -48,7 +48,7 @@ $(document).on('turbolinks:load', function(){
       $('#checktime_hour').val('');
       $('.plans_base').animate({ scrollTop: $('.plans_base')[0].scrollHeight });
       alert('予定を追加しました')
-      $('.plans_title').text(`現在の予定 ${gon.checktimes.length + 1}件`);
+      $('.plans_title').text(`現在の予定 ${gon.checktimes.length += 1}件`);
       console.log(gon.checktimes.length) 
       
     })
@@ -70,6 +70,7 @@ $(document).on('turbolinks:load', function(){
     var result = confirm('この予定を削除しますか？');
     if( result ) {
         var ddd = $(this).parents('.plans')
+        var vvv = $(this).parents('.plans').next()
         var sss = $(this).parents('.plans').data('id');
         var url = `checktimes/${sss}`;
         $.ajax({  
@@ -83,8 +84,9 @@ $(document).on('turbolinks:load', function(){
         })
         .done(function() {
           $(ddd).remove()
+          $(vvv).remove()
           alert('予定を削除しました。');
-          
+          $('.plans_title').text(`現在の予定 ${gon.checktimes.length -= 1}件`)
         })
         .always(function(data){
           $('.btn').prop('disabled', false);//ここで解除している
@@ -104,19 +106,28 @@ $(document).on('turbolinks:load', function(){
         var user_sec = user_date.getTime();
         var user_time = new Date(value.created_at)
         var t_sec = user_time.getTime();
-        var pass = (a_num - t_sec) * 1000 
-        
+        var pass = (a_num - t_sec) / 1000 
         const ind = i;
          
-         if(a_num > user_sec) {
-            $('#plans_' + ind).css('background', 'black')
-            i++;
-          
-           }
-        else if (pass * value.total_sec /1250 > 950 && pass * value.total_sec /1250 < 1250) {
+         if(pass / (value.total_sec / 1250) > 900 && pass / (value.total_sec /1250) < 1260) {
           $('#plans_' + ind).css('background', '#CC0000')
+          const str3 = $("#hidden1").val();
+          $('#check_msg_' + ind).text(str3);
+          i++;
+        // }(a_num > user_sec) {
+        //     $('#plans_' + ind).css('background', 'black')
+        //     i++;
+           }
+        else if (a_num > user_sec) {
+          $('#plans_' + ind).css('background', 'black')
+          const str4 = $("#hidden2").val();
+          $('#check_msg_' + ind).text(str4);
           i++;
         }
+        //  }(pass * value.total_sec /1265 > 882 && pass * value.total_sec /1265 < 1265) {
+        //   $('#plans_' + ind).css('background', '#CC0000')
+        //   i++;
+        // }
         else {
           i++;
           

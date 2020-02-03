@@ -12,18 +12,29 @@ $(document).on('turbolinks:load', function(){
   if ($('.before_bar').length) {
 } else {
   $('.al_bar').append(before_bar)
+  
+ 
 }
   
   $(function() {
-    if (bar_width > 1250){
+    if (bar_width >= 1250){
        $('.before_bar').css('width', `${display_width + 10}px`);
     }
+    
     else{
        $('.before_bar').css('width', `${bar_width}px`);
     }
     
     if (bar_width >= 1250){
       $('.before_bar').css('background', '#BB0000'); 
+      const str2 = $("#hidden4").val();
+		$('.space').text(str2);
+    }
+
+    if (bar_width >= 900 && bar_width <= 1249 ){
+      $('.before_bar').css('background', '#FFFF00'); 
+      const str1 = $("#hidden3").val();
+		$('.space').text(str1);
     }
   });
 
@@ -34,17 +45,26 @@ $(document).on('turbolinks:load', function(){
     function move() {
         cnt++;
  
-        if (cnt > 1260 - res) {
+        if (cnt >= 1260 - res) {
             $('.move_bar').css('background', '#BB0000'); 
             $('.before_bar').css('background', '#BB0000'); 
+            const str2 = $("#hidden4").val();
+            $('.space').text(str2);
             clearInterval(timer1);  
         }
- 
+
+        if (cnt >= 900 - res && cnt <= 1249 - res) {
+          $('.move_bar').css('background', '#FFFF00'); 
+          $('.before_bar').css('background', '#FFFF00'); 
+          const str1 = $("#hidden3").val();
+          $('.space').text(str1);
+        }
+
         var move_bar = `<div class="move_bar"></div>`
         $('.al_bar').append(move_bar);
         }
 
-        if (res < 1250) {
+        if (res < 1260) {
         timer1  = setInterval(move, (gon.checktime.total_sec / 1250) * 1000);
         }
     });

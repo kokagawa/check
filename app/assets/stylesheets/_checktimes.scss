@@ -159,12 +159,19 @@
 
   .plans_base {
     width: 1050px;
-    height: 300px;
+    height: 500px;
     background: midnightblue;
     overflow: scroll;
     padding: 20px 20px 20px 20px;
     margin: auto;
     margin-left: 150px;
+    .check_msg {
+      width: 1000px;
+      color: white;
+      background: #770000;
+      clear:  both; 
+      margin-bottom: 20px;
+    }
     .plans {
       width: 1050px;
       height: 55px;
