@@ -15,6 +15,7 @@ var al_date = new Date();
   console.log(iii)
   console.log(al_now)
   console.log(al_num)
+  console.log(ooo - al_now)
   if ($('.before_bar').length) {
   } else {
   $('.al_bar').append(before_bar)
