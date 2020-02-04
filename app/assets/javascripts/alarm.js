@@ -9,13 +9,14 @@ var al_date = new Date();
   var extra_width = bar_width - 1250
   var display_width = bar_width - extra_width
   var before_bar = `<div class="before_bar"></div>`
-  var iii = new Date(2020, 1, 14, 21, 50, 0)
+  var iii = new Date(2020, 1, 4, 22, 5, 0)
   var ooo = iii.getTime();
-  console.log(ooo)
-  console.log(iii)
+  console.log(al_date)
   console.log(al_now)
   console.log(al_num)
-  console.log(ooo - al_now)
+  console.log(iii)
+  console.log(ooo)
+  console.log((ooo - al_now) / 1000)
   if ($('.before_bar').length) {
   } else {
   $('.al_bar').append(before_bar)
