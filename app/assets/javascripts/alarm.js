@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function(){
        window.name = "xyz";  
       }
       });
-      
+
 $(document).on('turbolinks:load', function(){ 
   var nowDate = new Date();
   var dnumNow = nowDate.getTime();
@@ -63,7 +63,7 @@ $(document).on('turbolinks:load', function(){
             clearInterval(timer1);  
         }
 
-        if (cnt >= 900 - res && cnt <= 1249 - res) {
+        if (cnt >= 900 - res && cnt <= 1259 - res) {
           $('.move_bar').css('background', '#FFFF00'); 
           $('.before_bar').css('background', '#FFFF00'); 
           const str1 = $("#hidden3").val();

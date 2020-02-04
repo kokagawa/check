@@ -22,7 +22,8 @@ $(document).on('turbolinks:load', function(){
                       <div class='remove_btn'>この予定を削除</div>
                     </a>
                    </div>
-                </div>`
+                </div>
+                <div class="check_msg"></div>`
   return html;
   }
   
