@@ -15,9 +15,12 @@ class AlarmsController < ApplicationController
 
   def create
     @checktime = Checktime.new(checktime_params)
+     
      time = Time.now
+     s_time = time.to_i
      plan = time.change(year:2020, month:@checktime.month, day:@checktime.day, hour:@checktime.hour, min:@checktime.minute, sec: 0 ) 
-     @checktime.total_sec = plan - time 
+     s_plan = plan.to_i
+     @checktime.total_sec = s_plan - s_time
      if @checktime.save
       respond_to do |format|
         format.html { redirect_to root_path }

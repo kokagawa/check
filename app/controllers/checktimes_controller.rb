@@ -1,4 +1,5 @@
 class ChecktimesController < ApplicationController
+ 
   def index
   end  
   

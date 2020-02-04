@@ -13,7 +13,10 @@
         MEMO
         = f.text_area :memo
       .date
-        日時  
+        日時#{@ccc}
+        #{@c_date}  
+        #{@ttt}
+        #{@rrr}
       .submit_box
         = f.number_field :month, min: 1, max: 12
         月
