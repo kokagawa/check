@@ -18,7 +18,7 @@ $(document).on('turbolinks:load', function(){
                      </div>                
                    <div class='plans_time'>
                     ${user_time.month}月${user_time.day}日&nbsp;${user_time.hour}:${user_time.minute}
-                    <a data-confirm="削除しますか？"  data-method"delete" href="checktimes/${user_time.id}"}>
+                    <a data-confirm="削除しますか？"  data-method = "delete" href="checktimes/${user_time.id}"}>
                       <div class='remove_btn'>この予定を削除</div>
                     </a>
                    </div>
@@ -64,38 +64,38 @@ $(document).on('turbolinks:load', function(){
 
 
 
-  $('.plans_base').on('click','.remove_btn', function(e){
-    e.preventDefault(); 
-    e.stopPropagation();
-    var result = confirm('この予定を削除しますか？');
-    if( result ) {
-        var ddd = $(this).parents('.plans')
-        var vvv = $(this).parents('.plans').next()
-        var sss = $(this).parents('.plans').data('id');
-        var url = `checktimes/${sss}`;
-        $.ajax({  
-          url: url,
-          type: 'DELETE',
-          data: sss,
-          dataType: 'json',
-          processData: false,
-          contentType: false,
-          beforeSend: function (xhr) { xhr.setRequestHeader("X-CSRF-Token", $('meta[name="csrf-token"]').attr('content')) }
-        })
-        .done(function() {
-          $(ddd).remove()
-          $(vvv).remove()
-          alert('予定を削除しました。');
-          $('.plans_title').text(`現在の予定 ${gon.checktimes.length -= 1}件`)
-        })
-        .always(function(data){
-          $('.btn').prop('disabled', false);//ここで解除している
-        })
+  // $('.plans_base').on('click','.remove_btn', function(e){
+  //   e.preventDefault(); 
+  //   e.stopPropagation();
+  //   var result = confirm('この予定を削除しますか？');
+  //   if( result ) {
+  //       var ddd = $(this).parents('.plans')
+  //       var vvv = $(this).parents('.plans').next()
+  //       var sss = $(this).parents('.plans').data('id');
+  //       var url = `checktimes/${sss}`;
+  //       $.ajax({  
+  //         url: url,
+  //         type: 'DELETE',
+  //         data: sss,
+  //         dataType: 'json',
+  //         processData: false,
+  //         contentType: false,
+  //         beforeSend: function (xhr) { xhr.setRequestHeader("X-CSRF-Token", $('meta[name="csrf-token"]').attr('content')) }
+  //       })
+  //       .done(function() {
+  //         $(ddd).remove()
+  //         $(vvv).remove()
+  //         alert('予定を削除しました。');
+  //         $('.plans_title').text(`現在の予定 ${gon.checktimes.length -= 1}件`)
+  //       })
+  //       .always(function(data){
+  //         $('.btn').prop('disabled', false);//ここで解除している
+  //       })
  
-    }
-    else {
-      }
-   })
+  //   }
+  //   else {
+  //     }
+  //  })
 
    
    var i = 0;

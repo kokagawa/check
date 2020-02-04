@@ -1,6 +1,9 @@
 .base
   .title
-    checker   
+    checker
+  = link_to description_index_path do  
+    .use_btn
+      使い方を見る     
   .form_box
     = form_for @checktime, url: alarms_path, method: :post do |f|
       .text_box

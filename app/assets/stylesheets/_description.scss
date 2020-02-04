@@ -1,0 +1,39 @@
+.description  {
+  height: 350px;
+  width: 1000px;
+  text-align: center;
+  color:white;
+  font-size: 20px;
+  margin: auto;
+  border: solid 3px white;
+  border-top: 0;
+  .description_msg {
+    height: 300px;
+    width: 800px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: start;
+  }
+}
+.description_btn {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 22pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #990000;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #990000;    /* 枠の指定 */
+}
+.msg {
+  height: 270px;
+  width: 1000px;
+  
+}
+.msg_alarm {
+  height: 180px;
+  width: 1000px;  
+}

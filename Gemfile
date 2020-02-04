@@ -78,3 +78,4 @@ gem 'haml-rails'
 gem "jquery-rails"
 gem 'jquery-turbolinks'
 gem 'gon'
+gem 'pry-rails'

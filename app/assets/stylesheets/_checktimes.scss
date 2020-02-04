@@ -28,23 +28,24 @@
     position: absolute;
     right:  50px;  
     top: 50px;      
+  } 
+  .use_btn {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 22pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #990000;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    border        : 2px solid #990000;    /* 枠の指定 */
+    position: absolute;
+    right:  50px;  
+    top: 50px;      
     
   } 
-  .msg {
-    height: 45px;
-    width: 1000px;
-    margin: auto;
-  }
-  .description  {
-    height: 500px;
-    width: 1000px;
-    text-align: center;
-    color:white;
-    font-size: 20px;
-    margin: auto;
-    border: solid 3px white;
-    border-top: 0;
-  }
   .use_space {
     height: 70px;
     width: 1000px;
@@ -108,6 +109,7 @@
         height: 60px;
         font-size: 20px;
         padding-left: 20px;
+        font-weight: normal;
      }
     } 
     .date {

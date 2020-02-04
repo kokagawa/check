@@ -12,10 +12,7 @@ class ChecktimesController < ApplicationController
   def destroy
     @checktime = Checktime.find(params[:id])    
     if @checktime.destroy
-      respond_to do |format|
-        format.html { redirect_to root_path }
-        format.json
-      end
+      redirect_to root_path
     else
       redirect_to root_path 
     end

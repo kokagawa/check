@@ -3,7 +3,7 @@
     checker
   = link_to root_path  do
     .add_btn
-      予定を追加  
+      予定一覧を見る  
 .main 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{@checktime.plan}&nbsp;&nbsp;&nbsp;&nbsp;#{@checktime.month}月#{@checktime.day}日#{@checktime.hour}時#{@checktime.minute}分
   - necessary_day = @checktime.total_sec / (24*60*60)
@@ -26,7 +26,8 @@
         .memo_box 
           #{@checktime.memo} 
           uuuuuuuuuu
-      #contents_right   
+      #contents_right 
+  .msg_alarm      
 = javascript_include_tag 'alarm.js'
 = javascript_include_tag 'countdown.js'
 

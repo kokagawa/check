@@ -1,12 +1,4 @@
-$(document).on('turbolinks:load', function(){ 
-  if (window.name != "xyt"){
-      location.reload();
-      window.name = "xyt";
-      }
-      else{
-       window.name = "xyz";  
-      }
-      });
+
 
 $(document).on('turbolinks:load', function(){  
   function set2fig(num) {
@@ -35,7 +27,7 @@ $(document).on('turbolinks:load', function(){
   var dlHour  = targetDate.getHours();
   var dlMin   = targetDate.getMinutes();
   var dlSec   = targetDate.getSeconds();
-  var msg1 = "期限の" + dlYear + "/" + dlMonth + "/" + dlDate + " " + set2fig(dlHour) + ":" + set2fig(dlMin) + ":" + set2fig(dlSec);
+  var msg1 = "期限の" + dlMonth + "月" + dlDate + "日" + set2fig(dlHour) + "時" + set2fig(dlMin) + "分";
 
   var diff2Dates = dnumTarget - dnumNow;
   if( dnumTarget < dnumNow ) {
@@ -59,7 +51,7 @@ $(document).on('turbolinks:load', function(){
   var msg;
   if( dnumTarget > dnumNow ) {
     // まだ期限が来ていない場合
-    msg = msg1 + "までは、あと" + msg2 + "です。";
+    msg = msg1 + "までは、　あと" + msg2 + "です。";
   }
   else {
     // 期限が過ぎた場合
