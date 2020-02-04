@@ -20,11 +20,9 @@ $(document).on('turbolinks:load', function(){
   var display_width = bar_width - extra_width
   var before_bar = `<div class="before_bar"></div>`
   if ($('.before_bar').length) {
-} else {
+  } else {
   $('.al_bar').append(before_bar)
-  
- 
-}
+   }
   
   $(function() {
     if (bar_width >= 1250){
