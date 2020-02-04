@@ -42,7 +42,7 @@ $(document).on('turbolinks:load', function(){
           + Math.floor(dMin) + "分"
           + Math.floor(dSec) + "秒";
  
-  // 表示文字列の作成
+  
   var msg;
   if( dnumTarget > dnumNow ) {
     msg = msg1 + "までは、　あと" + msg2 + "です。";

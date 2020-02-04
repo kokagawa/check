@@ -1,15 +1,16 @@
 
 $(document).on('turbolinks:load', function(){ 
-  var nowDate = new Date();
-  var dnumNow = nowDate.getTime();
+  var al_date = new Date();
+  var al_now = al_date.getTime();
   var user_start = new Date(gon.checktime.created_at);
-  var num = user_start.getTime();
-  var passage = (dnumNow - num) / 1000
+  var al_num = user_start.getTime();
+  var passage = (al_now - al_num) / 1000
   var before_bar = (passage / (gon.checktime.total_sec / 1250))
   var bar_width = Math.floor(before_bar)
   var extra_width = bar_width - 1250
   var display_width = bar_width - extra_width
   var before_bar = `<div class="before_bar"></div>`
+  console.log(bar_width)
   if ($('.before_bar').length) {
   } else {
   $('.al_bar').append(before_bar)
