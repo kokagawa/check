@@ -1,15 +1,11 @@
-
-
 $(document).on('turbolinks:load', function(){  
   function set2fig(num) {
-    // 数値が1桁だったら2桁の文字列にして返す
     var ret;
     if( num < 10 ) { ret = "0" + num; }
     else { ret = num; }
     return ret;
  }
  function isNumOrZero(num) {
-    // 数値でなかったら0にして返す
     if( isNaN(num) ) { return 0; }
     return num;
  }
@@ -31,17 +27,16 @@ $(document).on('turbolinks:load', function(){
 
   var diff2Dates = dnumTarget - dnumNow;
   if( dnumTarget < dnumNow ) {
-    // 期限が過ぎた場合は -1 を掛けて正の値に変換
     diff2Dates *= -1;
   }
 
-  var dDays  = diff2Dates / ( 1000 * 60 * 60 * 24 );   // 日数
+  var dDays  = diff2Dates / ( 1000 * 60 * 60 * 24 );   
   diff2Dates = diff2Dates % ( 1000 * 60 * 60 * 24 );
-  var dHour  = diff2Dates / ( 1000 * 60 * 60 );   // 時間
+  var dHour  = diff2Dates / ( 1000 * 60 * 60 ); 
   diff2Dates = diff2Dates % ( 1000 * 60 * 60 );
-  var dMin   = diff2Dates / ( 1000 * 60 );   // 分
+  var dMin   = diff2Dates / ( 1000 * 60 );  
   diff2Dates = diff2Dates % ( 1000 * 60 );
-  var dSec   = diff2Dates / 1000;   // 秒
+  var dSec   = diff2Dates / 1000;  
   var msg2 = Math.floor(dDays) + "日"
           + Math.floor(dHour) + "時間"
           + Math.floor(dMin) + "分"
@@ -50,17 +45,14 @@ $(document).on('turbolinks:load', function(){
   // 表示文字列の作成
   var msg;
   if( dnumTarget > dnumNow ) {
-    // まだ期限が来ていない場合
     msg = msg1 + "までは、　あと" + msg2 + "です。";
   }
   else {
-    // 期限が過ぎた場合
     msg = msg1 + "は、既に" + msg2 + "前に過ぎました。";
   }
 
-  // 作成した文字列を表示
   document.getElementById("contents_right").innerHTML = msg;
   };
-// 1秒ごとに実行
+
 setInterval(showCountdown,1000);
 });

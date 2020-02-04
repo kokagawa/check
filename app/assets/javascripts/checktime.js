@@ -58,46 +58,14 @@ $(document).on('turbolinks:load', function(){
       alert('エラーが発生したため予定を追加出来ませんでした。');
     })
     .always(function(data){
-      $('.btn').prop('disabled', false);//ここで解除している
+      $('.btn').prop('disabled', false);
       
     })
   })
 
 
 
-  // $('.plans_base').on('click','.remove_btn', function(e){
-  //   e.preventDefault(); 
-  //   e.stopPropagation();
-  //   var result = confirm('この予定を削除しますか？');
-  //   if( result ) {
-  //       var ddd = $(this).parents('.plans')
-  //       var vvv = $(this).parents('.plans').next()
-  //       var sss = $(this).parents('.plans').data('id');
-  //       var url = `checktimes/${sss}`;
-  //       $.ajax({  
-  //         url: url,
-  //         type: 'DELETE',
-  //         data: sss,
-  //         dataType: 'json',
-  //         processData: false,
-  //         contentType: false,
-  //         beforeSend: function (xhr) { xhr.setRequestHeader("X-CSRF-Token", $('meta[name="csrf-token"]').attr('content')) }
-  //       })
-  //       .done(function() {
-  //         $(ddd).remove()
-  //         $(vvv).remove()
-  //         alert('予定を削除しました。');
-  //         $('.plans_title').text(`現在の予定 ${gon.checktimes.length -= 1}件`)
-  //       })
-  //       .always(function(data){
-  //         $('.btn').prop('disabled', false);//ここで解除している
-  //       })
- 
-  //   }
-  //   else {
-  //     }
-  //  })
-
+  
    
    var i = 0;
    $.each(gon.checktimes, function(index, value) {
@@ -115,9 +83,6 @@ $(document).on('turbolinks:load', function(){
           const str3 = $("#hidden1").val();
           $('#check_msg_' + ind).text(str3);
           i++;
-        // }(a_num > user_sec) {
-        //     $('#plans_' + ind).css('background', 'black')
-        //     i++;
            }
         else if (a_num > user_sec) {
           $('#plans_' + ind).css('background', 'black')
@@ -125,13 +90,8 @@ $(document).on('turbolinks:load', function(){
           $('#check_msg_' + ind).text(str4);
           i++;
         }
-        //  }(pass * value.total_sec /1265 > 882 && pass * value.total_sec /1265 < 1265) {
-        //   $('#plans_' + ind).css('background', '#CC0000')
-        //   i++;
-        // }
         else {
           i++;
-          
-        }
+          }
       })
 });
