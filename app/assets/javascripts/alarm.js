@@ -65,7 +65,6 @@ var al_date = new Date();
 
         if (res < 1260) {
         timer1  = setInterval(move, (gon.checktime.total_sec / 1250) * 1000);
-        console.log(gon.checktime.total_sec);
         console.log((gon.checktime.total_sec / 1250) * 1000);
         console.log(10000 / 1200)
         }
