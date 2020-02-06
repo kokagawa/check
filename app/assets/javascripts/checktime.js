@@ -75,10 +75,12 @@ $(document).on('turbolinks:load', function(){
         var user_sec = user_date.getTime();
         var user_time = new Date(value.created_at)
         var t_sec = user_time.getTime();
-        var pass = (a_num - t_sec) / 1000 
+        var pass = (a_num - t_sec) / 1000
+        var v_sec = (user_sec - t_sec) / 1000 
+        console.log(v_sec)
         const ind = i;
          
-         if(pass / (value.total_sec / 1250) > 900 && pass / (value.total_sec /1250) < 1260) {
+         if(pass / (v_sec / 1250) > 900 && pass / (v_sec /1250) < 1260) {
           $('#plans_' + ind).css('background', '#CC0000')
           const str3 = $("#hidden1").val();
           $('#check_msg_' + ind).text(str3);

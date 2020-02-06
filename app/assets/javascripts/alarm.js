@@ -3,20 +3,20 @@ var al_date = new Date();
   var al_now = al_date.getTime();
   var user_start = new Date(gon.checktime.created_at);
   var al_num = user_start.getTime();
+  var iii = new Date(2020, gon.checktime.month - 1, gon.checktime.day, gon.checktime.hour, gon.checktime.minute, 0)
+  var ooo = iii.getTime();
+  var to_sec = (ooo - al_num) / 1000
   var passage = (al_now - al_num) / 1000
-  var before_bar = (passage / (gon.checktime.total_sec / 1250))
+  var before_bar = (passage / ( to_sec/ 1250))
   var bar_width = Math.floor(before_bar)
   var extra_width = bar_width - 1250
   var display_width = bar_width - extra_width
   var before_bar = `<div class="before_bar"></div>`
-  var iii = new Date(2020, 1, 4, 22, 5, 0)
-  var ooo = iii.getTime();
-  console.log(al_date)
-  console.log(al_now)
-  console.log(al_num)
-  console.log(iii)
-  console.log(ooo)
-  console.log((ooo - al_now) / 1000)
+  // console.log(al_now)
+  // console.log(al_num)
+  // console.log(iii)
+  // console.log(ooo)
+  // console.log((ooo - al_now) / 1000)
   if ($('.before_bar').length) {
   } else {
   $('.al_bar').append(before_bar)
@@ -71,7 +71,6 @@ var al_date = new Date();
         }
 
         if (res < 1260) {
-        timer1  = setInterval(move, (gon.checktime.total_sec / 1250) * 1000);
-        console.log(gon.checktime)
+        timer1  = setInterval(move, (to_sec / 1250) * 1000);
         }
 })    
