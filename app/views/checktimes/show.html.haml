@@ -23,23 +23,13 @@
     .contents_w
       .contents_left
         &nbsp;&nbsp;&nbsp;&nbsp;MEMO
-        .memo_box 
-          = simple_format(text)
+        .s_memo
+          = simple_format(@checktime.memo)
       #contents_right 
   .msg_alarm   
     = link_to  "#{@checktime.id}/edit" do
       .show_edit_btn
-        予定を変更
+        この予定を変更
     = link_to "#{@checktime.id}", method: :delete, data:{confirm: "削除しますか？"} do    
       .show_remove_btn 
-        予定を削除            
--# = javascript_include_tag 'alarm.js'
--# = javascript_include_tag 'countdown.js'
-
-             
-
-   
-
-
-     
-    
+        この予定を削除            

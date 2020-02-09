@@ -12,12 +12,15 @@ $(document).on('turbolinks:load', function(){
   function buildHTML(user_time) {
      var html = `<div class='plans' data-id="${user_time.id}">             
                      <div class='plans_name'>
-                       <a href="/alarms/${user_time.id}">
+                       <a href="/checktimes/${user_time.id}">
                        ${user_time.plan}
                        </a>
                      </div>                
                    <div class='plans_time'>
                     ${user_time.month}月${user_time.day}日&nbsp;${user_time.hour}:${user_time.minute}
+                    <a href="checktimes/${user_time.id}/edit"}>
+                    <div class='edit_btn'>この予定を変更</div>
+                    </a>
                     <a data-confirm="削除しますか？"  data-method = "delete" href="checktimes/${user_time.id}"}>
                       <div class='remove_btn'>この予定を削除</div>
                     </a>
@@ -30,7 +33,7 @@ $(document).on('turbolinks:load', function(){
   $('#new_checktime').on('submit', function(e){
     e.preventDefault();
     var u_date = new FormData(this);
-    var url = "/alarms";
+    var url = "/checktimes";
     $.ajax({  
       url: url,
       type: 'POST',

@@ -33,10 +33,13 @@
     - @checktimes.each_with_index do |n, index| 
       .plans{"data-id" => "#{n.id}"}
         .plans_name{:id => "plans_#{index}"}
-          = link_to "alarms/#{n.id}" do
+          = link_to "checktimes/#{n.id}" do
             #{n.plan}
         .plans_time
           #{n.month}月#{n.day}日&nbsp;#{n.hour}:#{n.minute}
+          = link_to  "checktimes/#{n.id}/edit" do
+            .edit_btn
+              この予定を変更
           = link_to "checktimes/#{n.id}", method: :delete, data:{confirm: "削除しますか？"} do
             .remove_btn
               この予定を削除

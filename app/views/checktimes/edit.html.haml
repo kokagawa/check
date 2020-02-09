@@ -1,0 +1,29 @@
+.base
+  .title
+    checker
+  .form_box
+    = form_for @checktime, url: checktime_path, method: :patch do |f|
+      .text_box
+        予定
+        = f.text_field :plan, maxlength: 14
+      .memo_box
+        MEMO
+        = f.text_area :memo
+      .date
+        日時#{@ccc}
+        #{@c_date}  
+        #{@ttt}
+        #{@rrr}
+      .submit_box
+        = f.number_field :month, min: 1, max: 12
+        月
+        = f.number_field :day, min: 1, max: 31
+        日
+        = f.number_field :hour, min: 0, max: 23
+        時
+        = f.number_field :minute, min: 0, max: 59
+        分
+        = f.submit "予定を変更", class: 'btn' 
+  .msg
+    
+   

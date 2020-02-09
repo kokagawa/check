@@ -1,5 +1,5 @@
 .description  {
-  height: 350px;
+  height: 400px;
   width: 1000px;
   text-align: center;
   color:white;
@@ -27,13 +27,12 @@
   line-height   : 1em;         /* 1行の高さ  */
   transition    : .3s;         /* なめらか変化 */
   border        : 2px solid #990000;    /* 枠の指定 */
+  margin-left: 600px;
+  margin-top: 20px;
 }
 .msg {
   height: 270px;
   width: 1000px;
   
-}
-.msg_alarm {
-  height: 180px;
-  width: 1000px;  
+  
 }
