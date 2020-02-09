@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function(){  
 var al_date = new Date();
   var al_now = al_date.getTime();
-  var user_start = new Date(gon.checktime.created_at);
+  var user_start = new Date(gon.checktime.updated_at);
   var al_num = user_start.getTime();
   var iii = new Date(2020, gon.checktime.month - 1, gon.checktime.day, gon.checktime.hour, gon.checktime.minute, 0)
   var ooo = iii.getTime();

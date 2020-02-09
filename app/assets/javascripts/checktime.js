@@ -76,7 +76,7 @@ $(document).on('turbolinks:load', function(){
         var a_num = a_date.getTime();
         var user_date = new Date(2020, value.month - 1,  value.day,  value.hour,  value.minute);
         var user_sec = user_date.getTime();
-        var user_time = new Date(value.created_at)
+        var user_time = new Date(value.updated_at)
         var t_sec = user_time.getTime();
         var pass = (a_num - t_sec) / 1000
         var v_sec = (user_sec - t_sec) / 1000 
