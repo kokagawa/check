@@ -6,6 +6,8 @@
       使い方を見る     
   .form_box
     = form_for @checktime, url: alarms_path, method: :post do |f|
+      .p_msg
+        予定を入力してください
       .text_box
         予定
         = f.text_field :plan, maxlength: 14

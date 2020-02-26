@@ -3,6 +3,8 @@
     checker
   .edit_form_box
     = form_for @checktime, url: checktime_path, method: :patch do |f|
+      .e_msg 
+        変更する内容を入力してください
       .text_box
         予定
         = f.text_field :plan, maxlength: 14

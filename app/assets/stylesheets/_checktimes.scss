@@ -76,12 +76,20 @@
       background    : #ffffff;     /* 文字色     */
     }
   .form_box {
-    height: 330px;
+    height: 350px;
     width: 1000px;
     background: darkturquoise;
     padding-top: 30px;
     margin: auto;
     border: solid 1px white;
+    .p_msg {
+      width: 220px;
+      height: 20px;
+      margin: auto;
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
     
     .text_box {
       width: 500px;

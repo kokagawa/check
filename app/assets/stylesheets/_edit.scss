@@ -1,11 +1,19 @@
 .edit_form_box {
-  height: 330px;
+  height: 350px;
   width: 1000px;
   background: #993366;
   padding-top: 30px;
   margin: auto;
   border: solid 1px white;
   color: white;
+  .e_msg {
+    width: 300px;
+    height: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
   .text_box {
     width: 500px;
     height: 80px;
