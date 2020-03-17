@@ -79,3 +79,4 @@ gem "jquery-rails"
 gem 'jquery-turbolinks'
 gem 'gon'
 gem 'pry-rails'
+gem 'devise'
