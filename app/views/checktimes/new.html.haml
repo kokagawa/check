@@ -3,7 +3,16 @@
     checker
   = link_to description_index_path do  
     .use_btn
-      使い方を見る     
+      使い方を見る 
+  .registration_box     
+    .user_registration                    
+      = link_to "◇ユーザー登録", new_user_registration_path
+    .user_registration  
+      = link_to "◇ログイン", new_user_session_path
+    .user_registration    
+      = link_to "◇ログアウト", destroy_user_session_path, method: "delete"
+    
+        
   .form_box
     = form_for @checktime, url: alarms_path, method: :post do |f|
       .p_msg
@@ -47,10 +56,8 @@
               この予定を削除
       .check_msg{:id => "check_msg_#{index}"}        
         %input#hidden1{:type => "hidden", :value => "予定の時間が近づいています"}/ 
-        %input#hidden2{:type => "hidden", :value => "予定の時間を過ぎています"}/              
-= link_to "ユーザー登録はこちら", new_user_registration_path
-= link_to "ログアウト", destroy_user_session_path, method: "delete"
-= link_to "ログイン", new_user_session_path
+        %input#hidden2{:type => "hidden", :value => "予定の時間を過ぎています"}/ 
+  
 
 
 

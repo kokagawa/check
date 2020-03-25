@@ -82,6 +82,7 @@
     padding-top: 30px;
     margin: auto;
     border: solid 1px white;
+    clear: both;
     .p_msg {
       width: 220px;
       height: 20px;
@@ -256,4 +257,23 @@
         }
       }
     }
+  .registration_box {
+    height: 50px;
+    width: 100vw;
+    padding-left: 200px;
+    .user_registration {
+      height: 50px;
+      width: 220px;
+      float: left;
+      margin-left: 100px;
+      margin-bottom: 20px;
+      text-align: center;
+      a {
+        color: white;
+        font-size: 20px;
+      }
+    }    
+  }    
 }
+
+   
