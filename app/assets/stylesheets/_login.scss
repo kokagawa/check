@@ -1,0 +1,54 @@
+.login_base_box {
+  height: 400px;
+  width: 400px;
+  margin: auto;
+  border: solid 1px #777777;
+  margin-top: 100px;
+  .login_title {
+    height: 60px;
+    width: 400px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 60px;
+    border-bottom: solid 1px #777777;
+  }
+  .new_user {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+}
+ 
+.login_user_btn {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 22pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #000066;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+  position: absolute;
+  right:  450px;  
+  top: 580px;      
+}
+.login_list_btn {
+  display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 22pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #990000;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    border        : 2px solid #990000;    /* 枠の指定 */
+    position: absolute;
+    right:  750px;  
+    top: 580px;      
+}
+
