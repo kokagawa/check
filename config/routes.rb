@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :checktimes
   resources :description
   root to: "home#index"
+  get 'logout' => 'logout#index'
   
 
 
