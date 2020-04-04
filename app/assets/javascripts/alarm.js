@@ -12,11 +12,7 @@ var al_date = new Date();
   var extra_width = bar_width - 1250
   var display_width = bar_width - extra_width
   var before_bar = `<div class="before_bar"></div>`
-  // console.log(al_now)
-  // console.log(al_num)
-  // console.log(iii)
-  // console.log(ooo)
-  // console.log((ooo - al_now) / 1000)
+  
   if ($('.before_bar').length) {
   } else {
   $('.al_bar').append(before_bar)

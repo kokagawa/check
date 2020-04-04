@@ -10,7 +10,7 @@
     .user_registration  
       = link_to "◇ログイン", new_user_session_path
     .user_registration    
-      = link_to "◇ログアウト", destroy_user_session_path, method: "delete"
+      = link_to "◇ログアウト", destroy_user_session_path, method: "delete", data:{confirm: "ログアウトします"}
     
         
   .form_box
@@ -37,28 +37,30 @@
         時
         = f.number_field :minute, min: 0, max: 59
         分
-        = f.submit "スタート", class: 'btn'   
-  .plans_title  
-    現在の予定  #{Checktime.count}件        
-  .plans_base
-    - @checktimes.each_with_index do |n, index| 
-      .plans{"data-id" => "#{n.id}"}
-        .plans_name{:id => "plans_#{index}"}
-          = link_to "checktimes/#{n.id}" do
-            #{n.plan}
-        .plans_time
-          #{n.month}月#{n.day}日&nbsp;#{n.hour}:#{n.minute}
-          = link_to  "checktimes/#{n.id}/edit" do
-            .edit_btn
-              この予定を変更
-          = link_to "checktimes/#{n.id}", method: :delete, data:{confirm: "削除しますか？"} do
-            .remove_btn
-              この予定を削除
-      .check_msg{:id => "check_msg_#{index}"}        
-        %input#hidden1{:type => "hidden", :value => "予定の時間が近づいています"}/ 
-        %input#hidden2{:type => "hidden", :value => "予定の時間を過ぎています"}/ 
+        = f.submit "スタート", class: 'btn' 
+  -if user_signed_in?
+    .plans_title  
+      現在の予定  #{Checktime.count}件        
+    .plans_base
+      - @checktimes.each_with_index do |n, index| 
+        .plans{"data-id" => "#{n.id}"}
+          .plans_name{:id => "plans_#{index}"}
+            = link_to "checktimes/#{n.id}" do
+              #{n.plan}
+          .plans_time
+            #{n.month}月#{n.day}日&nbsp;#{n.hour}:#{n.minute}
+            = link_to  "checktimes/#{n.id}/edit" do
+              .edit_btn
+                この予定を変更
+            = link_to "checktimes/#{n.id}", method: :delete, data:{confirm: "削除しますか？"} do
+              .remove_btn
+                この予定を削除
+        .check_msg{:id => "check_msg_#{index}"}        
+          %input#hidden1{:type => "hidden", :value => "予定の時間が近づいています"}/ 
+          %input#hidden2{:type => "hidden", :value => "予定の時間を過ぎています"}/ 
   
-
+  -else   
+    .logout_user
 
 
                       

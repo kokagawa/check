@@ -8,6 +8,9 @@ class ChecktimesController < ApplicationController
     @checktimes = Checktime.all
     gon.checktimes = @checktimes
     gon.checktime = @checktimes
+    if user_signed_in?
+      gon.current_user_id = current_user.id
+    end
   end  
 
   def create

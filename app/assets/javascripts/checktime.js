@@ -53,12 +53,18 @@ $(document).on('turbolinks:load', function(){
       $('.plans_base').animate({ scrollTop: $('.plans_base')[0].scrollHeight });
       alert('予定を追加しました')
       $('.plans_title').text(`現在の予定 ${gon.checktimes.length += 1}件`);
-      console.log(gon.checktimes.length) 
       
     })
     
     .fail(function(data){
-      alert('エラーが発生したため予定を追加出来ませんでした。');
+      var c_u_id = gon.current_user_id;
+      if(c_u_id != null) {
+        alert('エラーが発生したため予定を追加出来ませんでした。');  
+      }else {
+        alert('ログインしてください。');   
+      }
+     
+      
     })
     .always(function(data){
       $('.btn').prop('disabled', false);
@@ -80,7 +86,6 @@ $(document).on('turbolinks:load', function(){
         var t_sec = user_time.getTime();
         var pass = (a_num - t_sec) / 1000
         var v_sec = (user_sec - t_sec) / 1000 
-        console.log(v_sec)
         const ind = i;
          
          if(pass / (v_sec / 1250) > 900 && pass / (v_sec /1250) < 1260) {
