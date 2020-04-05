@@ -47,7 +47,7 @@
     
   } 
   .use_space {
-    height: 70px;
+    height: 100px;
     width: 1000px;
     text-align: center;
     color:white;
@@ -66,7 +66,6 @@
       line-height   : 1em;         /* 1行の高さ  */
       transition    : .3s;         /* なめらか変化 */
       border        : 2px solid #000066;    /* 枠の指定 */
-      margin-top: 10px;
     }
   }
   

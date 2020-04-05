@@ -1,13 +1,24 @@
 .base
   .title
-    checker   
+    checker 
+  .registration_box     
+    .user_registration                    
+      = link_to "◇ユーザー登録", new_user_registration_path
+    .user_registration  
+      = link_to "◇ログイン", new_user_session_path
+    .user_registration    
+      = link_to "◇ログアウト", destroy_user_session_path, method: "delete", data:{confirm: "ログアウトします"}
+        
   .use_space  
     .use
-      使い方の説明    
+      使い方の説明        
   .description   
     このアプリケーションはスケジュールを管理するアプリケーションです。
     .description_msg
-      入力欄に予定の名前や日時を入力して、スタートをクリックすると下の欄に予定が追加されます。
+      まずユーザー登録をクリックしてユーザー登録をしてください。
+      %br
+      %br
+      ログイン後、入力欄に予定の名前や日時を入力して、スタートをクリックすると下の欄に予定が追加されます。
       %br
       日時は半角で入力してください
       %br
@@ -22,6 +33,6 @@
   = link_to root_path, data: {"turbolinks" => false} do  
     .description_btn
       予定一覧を見る   
-  .msg  
+  .des_space
     
   
