@@ -20,6 +20,7 @@ class ChecktimesController < ApplicationController
      plan = time.change(year:2020, month:@checktime.month, day:@checktime.day, hour:@checktime.hour, min:@checktime.minute, sec: 0 ) 
      s_plan = plan.to_i
      @checktime.total_sec = s_plan - s_time
+     @checktime.user_id = current_user.id
      if @checktime.save
       respond_to do |format|
         format.html { redirect_to root_path }
