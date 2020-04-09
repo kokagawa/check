@@ -6,6 +6,7 @@ class ChecktimesController < ApplicationController
   def new
     @checktime = Checktime.new 
     @checktimes = Checktime.all
+    @user_checktimes = Checktime.where(user_id: current_user.id)
     gon.checktimes = @checktimes
     gon.checktime = @checktimes
     if user_signed_in?
