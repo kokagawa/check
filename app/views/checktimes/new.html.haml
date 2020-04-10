@@ -17,8 +17,6 @@
     = form_for @checktime, url: alarms_path, method: :post do |f|
       .p_msg
         予定を入力してください
-        - @user_checktimes.each do |n| 
-          #{n.plan}
       .text_box
         予定
         = f.text_field :plan, maxlength: 14
@@ -42,9 +40,11 @@
         = f.submit "スタート", class: 'btn' 
   -if user_signed_in?
     .plans_title  
-      現在の予定  #{Checktime.count}件        
+      現在の予定
+      = @user_checktimes.count 
+      件      
     .plans_base
-      - @checktimes.each_with_index do |n, index| 
+      - @user_checktimes.each_with_index do |n, index| 
         .plans{"data-id" => "#{n.id}"}
           .plans_name{:id => "plans_#{index}"}
             = link_to "checktimes/#{n.id}" do
