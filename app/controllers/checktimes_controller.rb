@@ -11,6 +11,7 @@ class ChecktimesController < ApplicationController
     end  
     gon.checktimes = @checktimes
     gon.checktime = @checktimes
+    gon.user_checktimes = @user_checktimes
     if user_signed_in?
       gon.current_user_id = current_user.id
     end
