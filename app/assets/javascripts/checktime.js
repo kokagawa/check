@@ -52,7 +52,7 @@ $(document).on('turbolinks:load', function(){
       $('#checktime_hour').val('');
       $('.plans_base').animate({ scrollTop: $('.plans_base')[0].scrollHeight });
       alert('予定を追加しました')
-      $('.plans_title').text(`現在の予定 ${gon.checktimes.length += 1}件`);
+      $('.plans_title').text(`現在の予定 ${gon.user_checktimes.length += 1}件`);
       
     })
     
